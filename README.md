@@ -109,15 +109,15 @@ Home page - Round Trip Approved flights and redirection
 - Flights Screen -
 
 Flights Screen - while backend was not active
-![flightsNoData](public/screenshots/homepage/flightsNoData.png)
+![flightsNoData](public/screenshots/flights/flightsNoData.png)
 
 Flights Screen - with backend was active
-![flightspageWithUsersFlightsData](public/screenshots/homepage/flightspageWithUsersFlightsData.png)
+![flightspageWithUsersFlightsData](public/screenshots/flights/flightspageWithUsersFlightsData.png)
 
 Flights Screen - responsive
-![flightspageResponsive](public/screenshots/homepage/flightspageResponsive.png)
+![flightspageResponsive](public/screenshots/flights/flightspageResponsive.png)
 
 Flights Screen - responsive when details opened
-![flightspageResponsiveWithDetails](public/screenshots/homepage/flightspageResponsiveWithDetails.png)
+![flightspageResponsiveWithDetails](public/screenshots/flights/flightspageResponsiveWithDetails.png)
 
 
