@@ -71,7 +71,7 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Proje Görüntüleri
 
-- Home Page -
+- Home Page
 
 Home page - while backend was not active
 ![homepage](public/screenshots/homepage/homapge1.png)
@@ -106,7 +106,7 @@ Home page - Round Trip third step
 Home page - Round Trip Approved flights and redirection
 ![homepageRoundTripApprovedFlightsandRedirect](public/screenshots/homepage/homepageRoundTripApprovedFlightsandRedirect.png)
 
-- Flights Screen -
+- Flights Screen
 
 Flights Screen - while backend was not active
 ![flightsNoData](public/screenshots/flights/flightsNoData.png)
