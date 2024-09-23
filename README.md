@@ -83,7 +83,7 @@ Home page One Way successfull query
 ![homepageOneWayQuery](public/screenshots/homepage/homepageOneWayQuery.png)
 
 Home page trying to fetch data not chosing date at round trip stage
-![homepageRoundTripWithoutChosenDateError](public/screenshots/homepage/homepageRoundTripWithoutChosenDateError.png)
+![homepageRoundTripWithoutChosenDateError](public/screenshots/homepage/homepageDateError.png)
 
 Home page responsive look
 ![homepageResponsive](public/screenshots/homepage/homepageResponsive.png)
@@ -95,7 +95,7 @@ Home page Round Trip stage successfull query
 ![homepageRoundTripQuery](public/screenshots/homepage/homepageRoundTripQuery.png)
 
 Home page Round Trip first step approvement
-![homepageRoundTripFirstStepApprovement](public/screenshots/homepage/homepageRoundTripFirstStepApprovement.png)
+![homepageRoundTripFirstStepApprovement](public/screenshots/homepage/homepageRoundTripWithoutChosenDateError.png)
 
 Home page - Round Trip second step
 ![homepageRoundTripSecondStep](public/screenshots/homepage/homepageRoundTripSecondStep.png)
