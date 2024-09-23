@@ -71,30 +71,30 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 ## Proje Görüntüleri
 
-Home Page
+- Home Page -
 
-Home page while backend was not active
+Home page - while backend was not active
 ![homepage](public/screenshots/homepage/homapge1.png)
 
-Home page when data hasnt been fetched
+Home page - when data hasnt been fetched
 ![homePageOneWayDepartureFiltered](public/screenshots/homepage/homepageOneWayDepartureFiltered.png)
 
-Home page One Way successfull query
+Home page - One Way successfull query
 ![homepageOneWayQuery](public/screenshots/homepage/homepageOneWayQuery.png)
 
-Home page trying to fetch data not chosing date at round trip stage
+Home page - trying to fetch data not chosing date at round trip stage
 ![homepageRoundTripWithoutChosenDateError](public/screenshots/homepage/homepageDateError.png)
 
-Home page responsive look
+Home page - responsive look
 ![homepageResponsive](public/screenshots/homepage/homepageResponsive.png)
 
-Home page filter section responsive look
+Home page - filter section responsive look
 ![homepageResponsiveFilterSection](public/screenshots/homepage/homepageResponsiveFilterSection.png)
 
-Home page Round Trip stage successfull query
+Home page - Round Trip stage successfull query
 ![homepageRoundTripQuery](public/screenshots/homepage/homepageRoundTripQuery.png)
 
-Home page Round Trip first step approvement
+Home page - Round Trip first step approvement
 ![homepageRoundTripFirstStepApprovement](public/screenshots/homepage/homepageRoundTripWithoutChosenDateError.png)
 
 Home page - Round Trip second step
@@ -106,6 +106,18 @@ Home page - Round Trip third step
 Home page - Round Trip Approved flights and redirection
 ![homepageRoundTripApprovedFlightsandRedirect](public/screenshots/homepage/homepageRoundTripApprovedFlightsandRedirect.png)
 
+- Flights Screen -
 
+Flights Screen - while backend was not active
+![flightsNoData](public/screenshots/homepage/flightsNoData.png)
+
+Flights Screen - with backend was active
+![flightspageWithUsersFlightsData](public/screenshots/homepage/flightspageWithUsersFlightsData.png)
+
+Flights Screen - responsive
+![flightspageResponsive](public/screenshots/homepage/flightspageResponsive.png)
+
+Flights Screen - responsive when details opened
+![flightspageResponsiveWithDetails](public/screenshots/homepage/flightspageResponsiveWithDetails.png)
 
 
