@@ -73,4 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Home Page
 
-![Ana Sayfa](public/screenshots/homepage/homapge1.png)
+Home page while backend was not active
+![homepage](public/screenshots/homepage/homapge1.png)
+
+Home page when data hasnt been fetched
+![homepageNoData](public/screenshots/homepage/homepageNoData.png)
