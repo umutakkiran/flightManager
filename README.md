@@ -77,4 +77,35 @@ Home page while backend was not active
 ![homepage](public/screenshots/homepage/homapge1.png)
 
 Home page when data hasnt been fetched
-![homepageNoData](public/screenshots/homepage/homepageNoData.png)
+![homePageOneWayDepartureFiltered](public/screenshots/homepage/homepageOneWayDepartureFiltered.png)
+
+Home page One Way successfull query
+![homepageOneWayQuery](public/screenshots/homepage/homepageOneWayQuery.png)
+
+Home page trying to fetch data not chosing date at round trip stage
+![homepageRoundTripWithoutChosenDateError](public/screenshots/homepage/homepageRoundTripWithoutChosenDateError.png)
+
+Home page responsive look
+![homepageResponsive](public/screenshots/homepage/homepageResponsive.png)
+
+Home page filter section responsive look
+![homepageResponsiveFilterSection](public/screenshots/homepage/homepageResponsiveFilterSection.png)
+
+Home page Round Trip stage successfull query
+![homepageRoundTripQuery](public/screenshots/homepage/homepageRoundTripQuery.png)
+
+Home page Round Trip first step approvement
+![homepageRoundTripFirstStepApprovement](public/screenshots/homepage/homepageRoundTripFirstStepApprovement.png)
+
+Home page - Round Trip second step
+![homepageRoundTripSecondStep](public/screenshots/homepage/homepageRoundTripSecondStep.png)
+
+Home page - Round Trip third step
+![homepageRoundTripThirdStep](public/screenshots/homepage/homepageRoundTripThirdStep.png)
+
+Home page - Round Trip Approved flights and redirection
+![homepageRoundTripApprovedFlightsandRedirect](public/screenshots/homepage/homepageRoundTripApprovedFlightsandRedirect.png)
+
+
+
+
