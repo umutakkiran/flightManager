@@ -13,7 +13,7 @@ const LottiePlayer = ({ animationData, loop, autoplay, onFinish, text }) => {
     };
 
     return (
-        <div className={autoplay && 'w-full h-full justify-center items-center z-50'}>
+        <div className={autoplay && 'w-full h-full justify-center items-center z-20'}>
             {
                 text &&
                 <div className=' w-full flex justify-center items-center'>

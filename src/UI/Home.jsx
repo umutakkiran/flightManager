@@ -5,7 +5,6 @@ import FilterSection from '../components/FilterSection';
 import SidePanel from '../components/SidePanel';
 import CustomDialog from '../shared/CustomDialog';
 import { useGenericQueryHook } from '../hooks/useGenericQueryHook';
-import { CircularProgress } from '@mui/material';
 import { useDispatch, useSelector } from 'react-redux';
 import { stepActions } from '../utils/slices/stepSlice';
 import { bookedFlightsActions } from '../utils/slices/bookedFlightsSlice';
@@ -18,11 +17,11 @@ function Home() {
     const [page, setPage] = React.useState(0);
     const [flightDirection, setFlightDirection] = React.useState(" ");
     const [alignment, setAlignment] = React.useState("One Way");
-    const [departureScheduleDate, setDepartureScheduleDate] = React.useState(new Date().toISOString().split('T')[0]);
-    const [arrivalScheduleDate, setArrivalScheduleDate] = React.useState(new Date().toISOString().split('T')[0]);
     const dispatch = useDispatch();
     const step = useSelector((state) => state.step.step);
-
+    const arrivalScheduleDate = useSelector((state) => state.arrival.arrivalDate);
+    const departureScheduleDate = useSelector((state) => state.departure.departureDate);
+    const scheduleTime = useSelector((state) => state.scheduleTime.scheduleTime);
 
     const { data: flights, isLoading, refetch, isRefetching } = useGenericQueryHook(`/api/flights/${page}/${step === 1 ? arrivalScheduleDate : departureScheduleDate}/${flightDirection}`, "flights", false);
 
@@ -46,37 +45,30 @@ function Home() {
                     <div className=' col-span-6 h-auto flex flex-col gap-4'>
                         <BookFlight refetch={refetch}
                             setPage={setPage}
-                            setDepartureScheduleDate={setDepartureScheduleDate}
-                            departureScheduleDate={departureScheduleDate}
-                            setArrivalScheduleDate={setArrivalScheduleDate}
-                            arrivalScheduleDate={arrivalScheduleDate}
                             alignment={alignment}
                             setAlignment={setAlignment}
                             setFlightDirection={setFlightDirection}
                         />
                         {
-                            isLoading ?
-                                <LottiePlayer autoplay={true} animationData={planeAnimation} loop={true} text={"Trying To Fetch Flights..."} />
+                            isLoading || isRefetching ?
+                                <LottiePlayer autoplay={true} animationData={planeAnimation} loop={true} />
                                 :
                                 <>
                                     {
-                                        flights?.data?.flights.length > 0 &&
-                                        <div className=' xl:grid xl:grid-cols-8 gap-4'>
-                                            {
-                                                step === 2 ?
-                                                    <div className=' w-full xl:col-span-8 h-auto overflow-y-auto flex flex-col justify-center items-center p-2 gap-20 lg:gap-10 border rounded-3xl bg-white shadow-xl'>
-                                                        <ThirStep />
-                                                    </div>
-                                                    :
-                                                    isRefetching ?
-                                                        <CircularProgress sx={{ color: 'var(--primary-color)', scale: 0.5 }} />
+                                        flights?.data?.flights?.length > 0 ? (
+                                            <div className=' xl:grid xl:grid-cols-8 gap-4'>
+                                                {
+                                                    step === 2 ?
+                                                        <div className=' w-full xl:col-span-8 h-auto overflow-y-auto flex flex-col justify-center items-center p-2 gap-20 lg:gap-10 border rounded-3xl bg-white shadow-xl'>
+                                                            <ThirStep />
+                                                        </div>
                                                         :
                                                         <>
                                                             <div className=' xl:col-span-6'>
                                                                 <FlightCardList
                                                                     isOpen={isOpen}
                                                                     setIsOpen={setIsOpen}
-                                                                    flights={flights}
+                                                                    flights={flights ? flights : null}
                                                                     refetch={refetch}
                                                                     page={page}
                                                                     setPage={setPage}
@@ -88,8 +80,11 @@ function Home() {
                                                                 <FilterSection alignment={alignment} setFlightDirection={setFlightDirection} flightDirection={flightDirection} />
                                                             </div>
                                                         </>
-                                            }
-                                        </div>
+                                                }
+                                            </div>
+                                        ) : (
+                                            <div>No flights available</div> // Eğer uçuş yoksa gösterilecek mesaj
+                                        )
                                     }
                                 </>
                         }

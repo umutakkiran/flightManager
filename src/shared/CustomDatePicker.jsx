@@ -1,10 +1,15 @@
 import React, { useState } from 'react'
 import { Datepicker } from "flowbite-react";
 import { toast } from 'react-toastify';
+import { useDispatch, useSelector } from 'react-redux';
+import { arrivalActions } from '../utils/slices/arrivalSlice';
+import { departureActions } from '../utils/slices/departureSlice';
 
-
-export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleDate, disabled }) {
-  const [displayDate, setDisplayDate] = useState(new Date());
+export default function CustomDatePicker({ rightRadius, leftRadius, disabled, type }) {
+  const dispatch = useDispatch();
+  const arrivalScheduleDate = useSelector((state) => state.arrival.arrivalDate);
+  const departureScheduleDate = useSelector((state) => state.departure.departureDate);
+  const [displayDate, setDisplayDate] = useState(type === 1 ? departureScheduleDate : arrivalScheduleDate);
   const customTheme = {
     "root": {
       "base": "relative text-base/6 text-sm "
@@ -109,10 +114,18 @@ export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleD
 
     const formattedDate = `${year}-${month}-${day}`;
     setDisplayDate(e)
-    setScheduleDate(formattedDate);
+
+    type === 1 ?
+      dispatch(departureActions.changeDepartureDate(formattedDate))
+      :
+      dispatch(arrivalActions.changeArrivalDate(formattedDate))
+
   };
 
   function displayFormatDate(dateString) {
+    if (!dateString) {
+      return;
+    }
     const date = new Date(dateString);
     const options = { month: 'short', day: '2-digit' };
     const formattedDate = date.toLocaleString('en-US', options);
@@ -126,9 +139,10 @@ export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleD
     <Datepicker
       theme={customTheme}
       onSelectedDateChanged={handleDateChange}
-      value={displayFormatDate(displayDate)}
-      disabled={ disabled ? disabled : false}
-      className={ disabled ? ` opacity-50` : ` hover:cursor-pointer`}
+      value={type === 1 ? displayFormatDate(departureScheduleDate) : type === 2 ? displayFormatDate(arrivalScheduleDate) : null}
+      placeholder={type === 1 ? (departureScheduleDate === null ? "Choose a date" : displayFormatDate(departureScheduleDate)) : (type === 2 && arrivalScheduleDate === null ? "Choose a date" : displayFormatDate(arrivalScheduleDate))}
+      disabled={disabled ? disabled : false}
+      className={disabled ? ` opacity-50` : ` hover:cursor-pointer`}
       style={{
         backgroundColor: 'white',
         textAlign: 'center',

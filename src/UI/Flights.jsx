@@ -17,14 +17,11 @@ function Flights() {
         <Navbar />
         <div className=' w-full h-auto flex flex-col py-8 gap-4'>
           <FlightBar />
-          <div className=' flex flex-row gap-4 items-center py-2'>
-            <AirplaneTicketIcon sx={{ fontSize: 24 }} />
-            <TextTitle>My Flights</TextTitle>
-          </div>
+          
           <div className=' flex flex-col gap-10 mb-10'>
             {
               isLoading ?
-              <LottiePlayer autoplay={true} animationData={planeAnimation} loop={true} text={"Trying To Fetch Flights..."} />
+              <LottiePlayer autoplay={true} animationData={planeAnimation} loop={true} />
                 :
               tickets?.data?.map((ticket, index) => (
                 <MyFlightCard

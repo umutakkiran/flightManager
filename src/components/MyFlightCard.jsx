@@ -49,17 +49,17 @@ function MyFlightCard({ takeOffTime, LandingTime, takeOffAirport, landingAirport
             {isOpen && (
                 <div className='mt-4 p-4 bg-gray-100 rounded-lg flex flex-col lg:flex-row gap-4'>
                     <div className=' flex lg:hidden lg:col-span-6 p-1 flex-row gap-4'>
-                        <div className='h-32 w-24 rounded-md border flex justify-center items-center flex-col gap-2'>
+                        <div className='h-32 w-24 rounded-md border-2 flex justify-center items-center flex-col gap-2'>
                             <TextBody color={'var(--primary-color)'}>$ 186</TextBody>
                             <TextBody>Main</TextBody>
                         </div>
-                        <div className='h-32 w-24 rounded-md border flex justify-center items-center flex-col gap-2 bg-slate-100'></div>
-                        <div className='h-32 w-24 rounded-md border flex justify-center items-center flex-col gap-2'>
+                        <div className='h-32 w-24 rounded-md border-2 flex justify-center items-center flex-col gap-2 bg-slate-100'></div>
+                        <div className='h-32 w-24 rounded-md border-2 flex justify-center items-center flex-col gap-2'>
                             <TextBody color={'var(--primary-color)'}>$ 210</TextBody>
                             <TextBody>Business</TextBody>
                         </div>
-                        <div className='h-32 w-24 bg-slate-100 rounded-md border flex justify-center items-center flex-col gap-2'></div>
-                        <div className='h-32 w-24 bg-slate-100 rounded-md border flex justify-center items-center flex-col gap-2'></div>
+                        <div className='h-32 w-24 bg-slate-100 rounded-md border-2 flex justify-center items-center flex-col gap-2'></div>
+                        <div className='h-32 w-24 bg-slate-100 rounded-md border-2 flex justify-center items-center flex-col gap-2'></div>
                     </div>
                     <div className='flex flex-col gap-2 min-w-40'>
                         <TextBody>Service Type:</TextBody>

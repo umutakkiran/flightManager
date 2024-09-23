@@ -210,56 +210,64 @@ function FlightCard({ flight, destinations, setFlightDirection, alignment }) {
               flight={flight.flightName}
             >
               <div className=' w-auto h-auto rounded-3xl flex flex-col justify-center items-center gap-4 p-4'>
-                <TextDisplay >Here Is Your Flight</TextDisplay>
-                <div className=' flex flex-col gap-2'>
-                  <TextTitle>
-                    <TextBody>
-                      Flight code:
-                    </TextBody>
-                    {flight.flightName}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Flight Number:
-                    </TextBody>
-                    {flight.flightNumber}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Departure Time:
-                    </TextBody>
-                    {DateConverter(flight?.scheduleDateTime)}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Landing Time:
-                    </TextBody>
-                    {DateConverter(flight?.actualLandingTime)}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Direction:
-                    </TextBody>
-                    {flight?.flightDirection === "A" ? "Arrival" : "Departure"}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Destination:
-                    </TextBody>
-                    {destination?.data.city}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      TakeOff Airport:
-                    </TextBody>
-                    {getTakeOffAirportInfo(flight.flightDirection, destination?.data.city)}
-                  </TextTitle>
-                  <TextTitle>
-                    <TextBody>
-                      Landing Airport:
-                    </TextBody>
-                    {getLandingAirportInfo(flight.flightDirection, destination?.data.city)}
-                  </TextTitle>
+                <TextDisplay >Flight Information</TextDisplay>
+                <div className=' flex flex-col lg:flex-row gap-8'>
+                  <div className='flex flex-col p-4 bg-white shadow-md rounded-lg'>
+                    <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Flight Code:</TextBody>
+                          {flight.flightName}
+                        </TextTitle>
+                      </div>
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Flight Number:</TextBody>
+                          {flight.flightNumber}
+                        </TextTitle>
+                      </div>
+
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Departure Time:</TextBody>
+                          {DateConverter(flight?.scheduleDateTime)}
+                        </TextTitle>
+                      </div>
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Landing Time:</TextBody>
+                          {DateConverter(flight?.actualLandingTime)}
+                        </TextTitle>
+                      </div>
+
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Direction:</TextBody>
+                          {flight?.flightDirection === "A" ? "Arrival" : "Departure"}
+                        </TextTitle>
+                      </div>
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Destination:</TextBody>
+                          {destination?.data.city}
+                        </TextTitle>
+                      </div>
+
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>TakeOff Airport:</TextBody>
+                          {getTakeOffAirportInfo(flight.flightDirection, destination?.data.city)}
+                        </TextTitle>
+                      </div>
+                      <div className='flex flex-col items-start'>
+                        <TextTitle>
+                          <TextBody>Landing Airport:</TextBody>
+                          {getLandingAirportInfo(flight.flightDirection, destination?.data.city)}
+                        </TextTitle>
+                      </div>
+                    </div>
+                  </div>
+
                 </div>
                 <CustomButton onClick={() => approveFlight(
                   {

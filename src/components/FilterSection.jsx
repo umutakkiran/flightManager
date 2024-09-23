@@ -53,8 +53,8 @@ function FilterSection({setFlightDirection, flightDirection, alignment}) {
                         defaultValue="female"
                         name="radio-buttons-group"
                     >
-                        <FormControlLabel value="pre" control={<Radio />} label="5:00 - 11:59" />
-                        <FormControlLabel value="post" control={<Radio />} label="12:00 - 5:59" />
+                        <FormControlLabel  value="pre" control={<Radio style={{color:'var(--secondary-color)'}} />} label="5:00 - 11:59" />
+                        <FormControlLabel  value="post" control={<Radio style={{color:'var(--secondary-color)'}} />} label="12:00 - 5:59" />
                     </RadioGroup>
                 </FormControl>
             </div>
@@ -70,9 +70,9 @@ function FilterSection({setFlightDirection, flightDirection, alignment}) {
                         defaultValue="female"
                         name="radio-buttons-group"
                     >
-                        <FormControlLabel value="none" control={<Radio />} label="nonstop" />
-                        <FormControlLabel value="one" control={<Radio />} label="1 stop" />
-                        <FormControlLabel value="twoplus" control={<Radio />} label="2+ stop" />
+                        <FormControlLabel  value="none" control={<Radio style={{color:'var(--secondary-color)'}} />} label="nonstop" />
+                        <FormControlLabel  value="one" control={<Radio style={{color:'var(--secondary-color)'}} />} label="1 stop" />
+                        <FormControlLabel  value="twoplus" control={<Radio style={{color:'var(--secondary-color)'}} />} label="2+ stop" />
                     </RadioGroup>
                 </FormControl>
             </div>
@@ -91,7 +91,7 @@ function FilterSection({setFlightDirection, flightDirection, alignment}) {
                     >
                         {
                             airlines?.data.airlines.map((airline, index) => (
-                                <FormControlLabel key={index} value={airline.iata} control={<Radio />} label={airline.publicName} />
+                                <FormControlLabel  key={index} value={airline.iata} control={<Radio style={{color:'var(--secondary-color)'}} />} label={airline.publicName} />
                             ))
                         }
                     </RadioGroup>

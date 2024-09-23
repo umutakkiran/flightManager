@@ -74,6 +74,7 @@ function FlightCardList({ setIsOpen, isOpen, flights, refetch, page, setPage, al
 
 
       {
+        flights &&
         flights?.data?.flights.map((flight, index) => (
           <FlightCard
             key={flight.id}
