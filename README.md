@@ -6,8 +6,14 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 In the project directory, you can run:
 
+### `git clone`
+git clone https://github.com/umutakkiran/flightManager.git
+
+### `open folder`
+cd flightManager
+
 ### `npm install`
-İnstall all dependencies for app
+Install all dependencies for app
 
 ### `npm start`
 
