@@ -73,4 +73,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 Home Page
 
-![Ana Sayfa](screenshots/homapge1.png)
+![Ana Sayfa](public/screenshots/homepage/homapge1.png)
