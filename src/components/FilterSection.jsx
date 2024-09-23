@@ -9,18 +9,37 @@ import FormLabel from '@mui/material/FormLabel';
 import { useGenericQueryHook } from '../hooks/useGenericQueryHook';
 
 
-function FilterSection() {
+function FilterSection({setFlightDirection, flightDirection, alignment}) {
     const { data: airlines, isLoading } = useGenericQueryHook("/api/airlines", "airlines")
 
     if (isLoading === false) {
+    }
+
+    function changeFlightDirection (e) {
+        setFlightDirection(e)
     }
     return (
         <div className=' w-full flex flex-col gap-4 xl:overflow-y-auto h-[32rem]'>
             <div className=' flex flex-col gap-2'>
                 <TextTitle>
-                    Sort By:
+                    Flight Direction:
                 </TextTitle>
-                <CustomSelect rightRadius leftRadius />
+                {
+                    alignment === "Round Trip" ?
+                    <CustomSelect rightRadius leftRadius
+                    data={[{value:" ", publicName:{english:"All"}},{value:"A", publicName:{english:"Arrival"}},{value:"D", publicName:{english:"Departure"}},]}
+                    onChange={changeFlightDirection}
+                    firstValue={flightDirection}
+                    disabled={true}
+                    />
+                    :
+                    <CustomSelect rightRadius leftRadius
+                    data={[{value:" ", publicName:{english:"All"}},{value:"A", publicName:{english:"Arrival"}},{value:"D", publicName:{english:"Departure"}},]}
+                    onChange={changeFlightDirection}
+                    firstValue={flightDirection}
+                    disabled={false}
+                    />
+                }
             </div>
             <div className=' flex flex-col gap-2'>
                 <FormControl>

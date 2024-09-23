@@ -7,19 +7,39 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import HotelIcon from '@mui/icons-material/Hotel';
 import BeachAccessIcon from '@mui/icons-material/BeachAccess';
 
-
 function SidePanel() {
     return (
         <div className='flex flex-col w-full h-full gap-8'>
-            <div className="relative rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2" style={{ backgroundImage: `url(${carImage})` }}>
+            <div 
+                className="relative rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2"
+                style={{
+                    backgroundImage: `url(${carImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+            >
                 <DirectionsCarIcon sx={{ fontSize: 32, color: "#ffffff" }} />
                 <TextDisplay color={"#ffffff"}>Car Rentals</TextDisplay>
             </div>
-            <div className="rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2" style={{ backgroundImage: `url(${hotelImage})` }}>
+            <div 
+                className="rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2"
+                style={{
+                    backgroundImage: `url(${hotelImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+            >
                 <HotelIcon sx={{ fontSize: 32, color: "#ffffff" }} />
                 <TextDisplay color={"#ffffff"}>Hotels</TextDisplay>
             </div>
-            <div className="rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2" style={{ backgroundImage: `url(${packageImage})` }}>
+            <div 
+                className="rounded-3xl w-full border h-1/3 p-8 flex flex-col justify-end items-start gap-2"
+                style={{
+                    backgroundImage: `url(${packageImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center'
+                }}
+            >
                 <BeachAccessIcon sx={{ fontSize: 32, color: "#ffffff" }} />
                 <TextDisplay color={"#ffffff"}>Travel Packages</TextDisplay>
             </div>
@@ -27,4 +47,4 @@ function SidePanel() {
     )
 }
 
-export default SidePanel
+export default SidePanel;

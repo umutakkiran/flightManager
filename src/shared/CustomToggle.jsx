@@ -3,12 +3,19 @@ import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
 import { TextBody } from './Texts/Texts';
 
-function CustomToggle({ firstText, SecondText, alignment ,setAlignment }) {
+function CustomToggle({ firstText, SecondText, alignment, setAlignment, setFlightDirection }) {
 
-    const handleChange = (
-        event,
-        newAlignment,
-    ) => {
+    const handleChange = (event, newAlignment) => {
+        // Eğer seçilen buton zaten aktifse, değişiklik yapılmasın
+        if (newAlignment === null) return;
+
+        // Seçili buton kontrolü
+        if (newAlignment === firstText) {
+            setFlightDirection("D");
+        } else {
+            setFlightDirection(" ");
+        }
+
         setAlignment(newAlignment);
     };
 
@@ -30,12 +37,12 @@ function CustomToggle({ firstText, SecondText, alignment ,setAlignment }) {
                 },
             }}
         >
-            <ToggleButton sx={{ width: 100, borderRadius: 50, height:30 }} value={firstText}>
+            <ToggleButton sx={{ width: 100, borderRadius: 50, height: 30 }} value={firstText}>
                 <TextBody>
                     {firstText}
                 </TextBody>
             </ToggleButton>
-            <ToggleButton sx={{ width: 100, borderRadius: 50, height:30 }} value={SecondText}>
+            <ToggleButton sx={{ width: 100, borderRadius: 50, height: 30 }} value={SecondText}>
                 <TextBody>
                     {SecondText}
                 </TextBody>
@@ -44,4 +51,4 @@ function CustomToggle({ firstText, SecondText, alignment ,setAlignment }) {
     );
 }
 
-export default CustomToggle
+export default CustomToggle;

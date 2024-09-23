@@ -10,14 +10,13 @@ import SettingsIcon from '@mui/icons-material/Settings';
 import GroupAddIcon from '@mui/icons-material/GroupAdd';
 import VideoLabelIcon from '@mui/icons-material/VideoLabel';
 import StepConnector, { stepConnectorClasses } from '@mui/material/StepConnector';
-import CustomButton from './CustomButton';
 import { useSelector } from 'react-redux';
 
 const QontoConnector = styled(StepConnector)(({ theme }) => ({
   [`&.${stepConnectorClasses.alternativeLabel}`]: {
     top: 10,
-    left: 'calc(-50% + 16px)',
-    right: 'calc(50% + 16px)',
+    left: 'calc(-50% + 8px)',
+    right: 'calc(50% + 8px)',
   },
   [`&.${stepConnectorClasses.active}`]: {
     [`& .${stepConnectorClasses.line}`]: {
@@ -178,10 +177,6 @@ const step = useSelector((state) => state.step.step); // Redux'taki step değeri
             <StepLabel StepIconComponent={QontoStepIcon}>{label}</StepLabel>
           </Step>
         ))}
-        {
-            stepCount === 2 ?
-            <CustomButton onClick={() => console.log( JSON.stringify(bookedFlights)  + "UÇUŞLARRRR")} label={"Done"} /> : null
-        }
       </Stepper>
     </Stack>
   );

@@ -1,8 +1,10 @@
-import * as React from 'react';
+import React, { useState } from 'react'
 import { Datepicker } from "flowbite-react";
+import { toast } from 'react-toastify';
 
-export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleDate }) {
 
+export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleDate, disabled }) {
+  const [displayDate, setDisplayDate] = useState(new Date());
   const customTheme = {
     "root": {
       "base": "relative text-base/6 text-sm "
@@ -86,27 +88,50 @@ export default function CustomDatePicker({ rightRadius, leftRadius, setScheduleD
     }
   }
 
+
   const formatWithLeadingZero = (number) => {
     return number < 10 ? `0${number}` : number;
   }
+
+  const handleDateChange = (e) => {
+    const selectedDate = new Date(e);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Set time to the start of the day for comparison
+
+    if (selectedDate < today) {
+      toast.error('Seçilen tarih bugünden eski olamaz.');
+      return;
+    }
+
+    const year = selectedDate.getFullYear();
+    const month = formatWithLeadingZero(selectedDate.getMonth() + 1);
+    const day = formatWithLeadingZero(selectedDate.getDate());
+
+    const formattedDate = `${year}-${month}-${day}`;
+    setDisplayDate(e)
+    setScheduleDate(formattedDate);
+  };
+
+  function displayFormatDate(dateString) {
+    const date = new Date(dateString);
+    const options = { month: 'short', day: '2-digit' };
+    const formattedDate = date.toLocaleString('en-US', options);
+    const year = date.getFullYear().toString(); // Son iki basamak
+    return `${formattedDate}, ${year}`; // Virgül eklendi
+  }
+
 
   return (
 
     <Datepicker
       theme={customTheme}
-      onSelectedDateChanged={(e) => {
-        const year = e.getFullYear();
-        const month = formatWithLeadingZero(e.getMonth() + 1); // Aylar 0'dan başladığı için +1 ekledik
-        const day = formatWithLeadingZero(e.getDate());
-
-        const formattedDate = `${year}-${month}-${day}`;
-        setScheduleDate(formattedDate);
-        console.log(formattedDate);
-      }}
-      className=' hover:cursor-pointer'
+      onSelectedDateChanged={handleDateChange}
+      value={displayFormatDate(displayDate)}
+      disabled={ disabled ? disabled : false}
+      className={ disabled ? ` opacity-50` : ` hover:cursor-pointer`}
       style={{
         backgroundColor: 'white',
-        textAlign: 'end',
+        textAlign: 'center',
         height: 30,
         width: 175,
         borderTopLeftRadius: leftRadius ? '16px' : '1px',

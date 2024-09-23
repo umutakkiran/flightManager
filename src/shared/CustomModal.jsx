@@ -12,7 +12,6 @@ export default function SimpleDialog(props) {
 
     return (
         <Dialog onClose={handleClose} open={open}>
-            <DialogTitle>Set backup account</DialogTitle>
             <div>
                 {children}
             </div>

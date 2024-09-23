@@ -4,7 +4,7 @@ import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
 function FlightBar() {
     return (
-        <div className=' w-full h-auto flex flex-row justify-between p-6 bg-white shadow-md'>
+        <div className=' w-full h-auto flex flex-row justify-between p-6 bg-white rounded-3xl'>
             <div className=' flex flex-row gap-4'>
                 <div className=' border rounded-md flex justify-center items-center p-2'>
                     <TextBody>

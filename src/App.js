@@ -11,6 +11,8 @@ import Flights from './UI/Flights';
 import 'flowbite';
 import { Provider } from 'react-redux'
 import store from './utils/store';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const onError = (data) => {
   console.log(`error: ${data.message}`)
@@ -46,6 +48,7 @@ function App() {
             <Route path="/flights" element={<Flights />} />
           </Routes>
         </Router>
+        <ToastContainer position='top-center' />
       </QueryClientProvider>
     </Provider>
 
